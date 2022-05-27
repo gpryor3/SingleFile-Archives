@@ -1,0 +1,1108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><!--
+ Page saved with SingleFile 
+ url: https://www.barebones.com/support/develop/clm.html 
+ saved date: Fri May 27 2022 11:44:24 GMT-0400 (Eastern Daylight Time)
+--><meta charset=utf-8>
+<title>Bare Bones Software | Codeless Language Module Reference</title>
+<meta name=author content>
+<style media="screen, projection">html,body,div,span,h3,p,a,em,img,dl,dt,dd,ul,li,form,table,tbody,tr,td{margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline}body{line-height:1.5;background:#fff;margin:1.5em 0}table{border-collapse:separate;border-spacing:0}td{text-align:left;font-weight:400}a img{border:none}body{font-size:75%}body{color:#222;font-family:"Helvetica Neue","Lucida Grande",Helvetica,Arial,Verdana,sans-serif}h3{color:#111;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}h3{font-weight:normal}h3{font-size:1.5em;line-height:1;margin-bottom:1em}p{margin:0 0 1.5em}img{margin:0 0 1.5em}ul{margin:0 1.5em 1.5em 1.5em}ul{list-style-type:circle}dl{margin:0 0 1.5em 0}dl dt{font-weight:bold}dd{margin-left:1.5em}a:focus,a:hover{color:#000}a{color:#009;text-decoration:underline}strong{font-weight:bold}em{font-style:italic}table{margin-bottom:1.4em}td{border-bottom:1px solid #ddd}td{padding:4px 10px 4px 0}.small{font-size:.8em;margin-bottom:1.875em;line-height:1.875em}.container{width:950px;margin:0 auto}.column{float:left;margin-right:10px}.last{margin-right:0}.span-5{width:190px}.span-15{width:590px}.span-20{width:790px}.span-22{width:870px}.append-1{padding-right:40px}.append-2{padding-right:80px}.prepend-1{padding-left:40px}.prepend-2{padding-left:80px}hr{background:#ddd;color:#ddd;clear:both;float:none;width:100%;height:.1em;margin:0 0 1.4em;border:none}.clear:after,.container:after{content:".";display:block;height:0;clear:both;visibility:hidden}body{font-family:Verdana,"Bitstream Vera Sans",sans-serif;background-color:#FFF;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAB5CAIAAABZQ/3gAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAKFJREFUeNrs2UkOhSAQRdFv8ve/S0BAUHppbBbBwFSq3vzMX3KX53l+E1u+9vd9k//QX9dFfsKPMchP+N47at9aQ+1rraD9eZ6ofSkFtc85g/YpJdA+xgjahxBQe+89aO+cQ+2P4wDt930H7a21oL0xBrXftg2111qD9kop1F5Kidqv60p+wgshyE94zjn5Dz1jDLL/z/5/6P2JPHnE/hVgAMzRWfimfQm3AAAAAElFTkSuQmCC);background-repeat:repeat-x;margin-top:0px;background-size:auto 133px}@media screen and (max-width:520px){body{background-size:auto 187px}}h3{color:#111}a{color:#125AA7;-moz-outline:none}a:hover{color:#000}hr{background:#B2CCFF;color:#B2CCFF}table{border-top:1px solid #ddd;border-left:1px solid #ddd}td{border-bottom:1px solid #ddd;border-right:1px solid #ddd}#logo{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZwAAABACAMAAAAZFDHrAAAC/VBMVEVHcEzPAADQAADQAADQAADQAACqAADPAADQAADPAADJAADPAADPAADQAADPAADLAAAPDw8SEhLOAADQAAD/AADQAADPAADPAAATExMQEBAREREPDw8RERESEhIREREQEBAAAAAQEBARERHOAADPAADPAADQAADQAADQAAAREREQEBAREREQEBAREREQEBAQEBAQEBAREREQEBAREREQEBAQEBAREREREREAAAAREREPDw8PDw8REREREREQEBAREREREREQEBAREREREREREREREREREREQEBAQEBDTAADPAADQAADQAADRAADIAADQAAAQEBAREREREREQEBARERESEhIQEBAREREREREQEBAAAAAQEBAQEBDPAADPAADPAADPAADQAADPAADQAADQAAAPDw8PDw8PDw8PDw8cHBwQEBARERERERESEhIfHx8REREQEBAPDw8QEBAXFxfQAADOAADQAADPAAAREREREREQEBAREREREREREREREREREREMDAwREREQEBAQEBAREREQEBDOAADQAADZAADQAAAQEBAMDAwREREQEBASEhIREREREREQEBDOAADPAAAAAAAAAAAAAAARERERERHPAADPAADQAAAREREREREODg4QEBDQAADQAAAQEBAMDAzPAADQAADfAADQAADRAAAREREQEBATExMQEBDQAADQAADPAADQAAAQEBDQAADPAADQAADPAADQAAAQEBARERHPAADOAADRAADQAADQAADPAAATExMRERHRAADOAAAQEBARERERERHPAADPAAAPDw8SEhIVFRXPAADQAADPAAAREREQEBDPAAAQEBAQEBAQEBARERHMAADQAAAPDw/QAADSAADPAAAQEBAREREQEBDPAADQAAAREREQEBARERHRAADPAADQAADPAADRAAARERESEhLQAADMAAAREREREREODg4PDw/PAAAPDw/RAADPAADQAADQAAAQEBARERHQAAARERHQAADOAADRAAASEhIPDw8ezOa4AAAA/3RSTlMAkbvV7MQD+P/+EzrupE8JIjgVWgHF9FAZPVdgaVQ6HgKKoCm4aTRTTQ9crej/9MuWHPbw5MifZwXqEED969m8lF6Aw+zg0LotEZL8+z0E3KZa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);background-repeat:no-repeat;background-position:0 0;background-size:206px;width:206px;height:32px;display:block;text-indent:-3000px;margin-top:35px;float:left}@media screen and (max-width:520px){#logo{float:inherit;display:block;margin:30px auto 20px auto}}#site_navigation ul{background-color:#111;list-style-type:none;margin-top:16px;margin-left:0;margin-right:0;-moz-border-radius:.4em .4em .4em .4em;-webkit-border-top-left-radius:.4em;-webkit-border-top-right-radius:.4em;-webkit-border-bottom-left-radius:.4em;-webkit-border-bottom-right-radius:.4em;border:1px solid #000;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAuCAIAAAB8sQSzAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAD9JREFUeNpicXd3ZyACsPz//58YdUwMxAFizRvs9o44df/+/Rt1Hx3c9/Hjx5GUrkZa/h3s/h0u5Ti1zQMIMABi2XLbXqnEGwAAAABJRU5ErkJggg==);background-repeat:repeat-x;background-position:0 50%;padding:0 1em}#site_navigation ul li{padding:7px 0;float:left}#site_navigation ul li a{padding:8px 1em 8px 1em;color:#FFF;text-decoration:none;margin-right:1px}#site_navigation ul li a:hover{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAuCAIAAACamM/3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAD5JREFUeNpiTExMZMAGWP7//08lCSYGHIDl379/tLacDDsGVAc9jKKiHZ8+fRqEoTs4LR9QO+iRnUk2CiDAANvMggB4WLO/AAAAAElFTkSuQmCC);background-repeat:repeat-x;background-position:0 50%}@keyframes spinAround{from{transform:rotate(0deg)}to{transform:rotate(359deg)}}#sidebar{border-width:0 0 0 0;border-color:#DEDEDE;border-style:solid}#sidebar_content{padding:0 1em}@media screen and (max-width:991px){#sidebar_content{padding:1em 1em 0 1em;clear:both}}input[name=q]{border:1px solid #ccc;padding:7px;border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px}@media screen and (max-width:600px){input[name=q]{max-width:160px}}@media screen and (max-width:520px){#searchbox{width:240px;margin:0 auto;text-align:center}}input[name=sa]{height:30px;background-color:#d00000;border:1px solid #d00000;color:#fff;border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;font-weight:700;-webkit-appearance:none;-moz-appearance:none}.clear_fix:after{content:".";display:block;height:0;clear:both;visibility:hidden}.clear_fix{display:block}.newfeature{background-color:#FFFA8E;font-style:italic;font-weight:lighter}</style>
+<style>dl{border-top:1pt black solid;border-bottom:1pt black solid}dt{font-weight:bold;font-family:Helvetica,sans-serif}dd{font-style:italic}div.chapter{font-family:Helvetica,sans-serif;font-size:20pt;font-weight:bold;margin-bottom:1em;border-top:3pt black solid}div.section{font-family:Helvetica,sans-serif;font-size:17pt;font-weight:bold;margin-bottom:1em;margin-top:1em}div.subsection{font-family:Helvetica,sans-serif;font-size:14pt;font-weight:bold;margin-bottom:1em;margin-top:1em}div.subsubsection{font-family:Helvetica,sans-serif;font-size:12pt;font-weight:bold;margin-bottom:1em;margin-top:1em}div.subsubsubsection{font-size:11pt;text-decoration:underline;font-weight:bold;margin-bottom:1em;margin-top:1em}span.clmkey,span.mono{font-family:Menlo,Courier;font-size:8pt}span.monoshort{font-family:Menlo,Courier;font-size:8pt}span.meta{font-style:italic;font-family:Menlo,Courier;font-size:8pt}dl span.meta{font-style:normal;font-family:Menlo,Courier;font-size:8pt}div.verbatim{white-space:pre;font-family:Menlo,Courier;font-size:8pt;margin-bottom:1em;margin-left:4em}table.tagheader{font-family:Helvetica,sans-serif;font-size:10pt;font-weight:bold;border-top:1pt black solid;border-bottom:1pt black solid;margin-bottom:1em;margin-top:1em;width:100%}td.tagname{text-align:left;width:40%}td.tagtype{text-align:center;width:30%}td.tagoptional{text-align:right;width:30%}li{margin-bottom:1ex}ul.toc li{list-style-type:none;margin-bottom:0}ul.toc a:link{text-decoration:none;color:black}ul.toc a:hover{text-decoration:none;color:blue}#footer img.icon{border-radius:4px;border:0px solid #999;width:16px}#footer img{box-shadow:3px 3px 5px #999;margin:0px 5px 0px 0px}.cubox-extension-helper-button svg{pointer-events:none;opacity:.8!important;transition:opacity .2s ease}.cubox-extension-helper-button:hover svg{opacity:1!important}.sf-hidden{display:none!important}</style><link rel=canonical href=https://www.barebones.com/support/develop/clm.html><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style></head>
+<body id=support class=home>
+<div class=container>
+ <div class="column span-20 prepend-2 append-2 first last">
+ <div style=float:right;margin-top:35px id=searchbox>
+ 
+ 
+ 
+ <form action=https://www.barebones.com/search.html id=cse-search-box>
+ <div>
+ 
+ 
+ 
+ <input type=text name=q size=31 value>
+ <input type=submit name=sa value=Search>
+ 
+ </div>
+ </form>
+ 
+ </div>
+ 
+ <a id=logo href=https://www.barebones.com/>Bare Bones</a>
+ </div>
+ <div class="column span-22 prepend-1 append-1 first last" id=site_navigation>
+ <ul class=clear_fix>
+ <li>
+ <a class=home href=https://www.barebones.com/>Home</a>
+ </li>
+ <li>
+ <a class=company href=https://www.barebones.com/company/>Company</a>
+ </li>
+ <li>
+ <a class=products href=https://www.barebones.com/products/>Products</a>
+ </li>
+ <li>
+ <a class=support href=https://www.barebones.com/support/>Support</a>
+ </li>
+ <li>
+ <a class=discuss href=https://www.barebones.com/discuss/>Discuss</a>
+ </li>
+ <li>
+ <a class=store href=https://www.barebones.com/store/>Store</a>
+ </li>
+ <li>
+ <a class=contact href=https://www.barebones.com/contact/>Contact</a>
+ </li>
+ </ul>
+ </div>
+ <div class="column span-15 prepend-2 first">
+ 
+ 
+<div class=chapter>Codeless Language Modules</div>
+<p>Language modules let you extend BBEdit’s syntax coloring, block folding, and file indexing by adding a specification for each language you want to support. Native-code modules use specialized, hand-coded parsers to provide those services in a highly sophisticated, context-sensitive form. (If this interests you, you can find the language module SDK at <span class=mono><a href=https://www.barebones.com/support/develop>https://www.barebones.com/support/develop</a></span>.)</p>
+<p>
+Codeless language modules allow you to go almost as far using less-demanding tools.
+</p>
+<dl>
+ <dt>Note:</dt>
+ <dd>
+ Although this document refers exclusively to writing codeless language modules for BBEdit, the information here also applies to contemporary TextWrangler versions; and so your codeless language module will be compatible with both products (assuming BBEdit 10.1 or later and TextWrangler 4.0 and later).<br><br>
+ </dd>
+ <dd>
+ For recent changes to codeless language modules which apply <strong>only</strong> to BBEdit 11, please see <a href=https://www.barebones.com/support/technotes/language-module-changes.html>this tech note</a>.
+ </dd>
+</dl>
+<div class=subsection>In this document</div>
+<ul class=toc>
+<li><a href=#TypesOfCodelessLanguageModules>Types of Codeless Language Modules</a></li>
+<li><a href=#KeysForCodelessLanguageModules>Keys for Codeless Language Modules</a></li>
+<ul>
+ <li><a href=#KeysForAllModules>Keys for All Modules</a></li>
+ <ul>
+ <li><a href=#Identification>Identification</a></li>
+ <li><a href=#FileMapping>File Mapping</a></li>
+ <li><a href=#Services>Services</a></li>
+ <li><a href=#ControllingSyntaxColoring>Controlling Syntax Coloring</a></li>
+ <li><a href=#UnCommentMarkers>Un/Comment Tokens</a></li>
+ </ul>
+ <li><a href=#LanguageFeatures>Language Features</a></li>
+ <ul>
+ <li><a href=#IdentifyingKeywordStrings>Identifying Keyword Strings</a></li>
+ <li><a href=#StringBasedPatterns>String-Based Patterns</a></li>
+ <ul>
+ <li><a href=#StringLikeElements>String-like Elements</a></li>
+ <li><a href=#StructuralElements>Structural Elements</a></li>
+ </ul>
+ <li><a href=#RegularExpressionPatterns>Regular-Expression Patterns</a></li>
+ <ul>
+ <li><a href=#REStringLikeElements>String-like Elements</a></li>
+ <li><a href=#REStructuralElements>Structural Elements</a></li>
+ </ul>
+ </ul>
+</ul>
+<li><a href=#Examples>Examples</a></li>
+<ul>
+ <li><a href=#TheBareMinimum>The Bare Minimum</a></li>
+ <li><a href=#StringPatterns>String Patterns</a></li>
+ <ul>
+ <li><a href=#Comments>Comments</a></li>
+ <li><a href=#Strings>Strings</a></li>
+ <li><a href=#Structures>Structures</a></li>
+ </ul>
+ <li><a href=#ExRegularExpressionPatterns>Regular-Expression Patterns</a></li>
+ <ul>
+ <li><a href=#ExREStrings>Strings</a></li>
+ <li><a href=#ExREComments>Comments</a></li>
+ <li><a href=#Functions>Functions</a></li>
+ <li><a href=#Skip>Skip</a></li>
+ </ul>
+</ul>
+<li><a href=#Tips>Tips</a></li>
+<li><a href=#AlphaIndex>Index of CLM Tags</a></li>
+<li><a href=#Credits>Credits</a></li>
+</ul>
+<hr>
+<div id=TypesOfCodelessLanguageModules class=section>Types of Codeless Language Modules</div>
+<p>
+Codeless language modules take the form of property list files (plists), a simple XML document type used throughout Mac&nbsp;OS&nbsp;X. The format provides a set of primitive types, like strings and numbers, plus structural elements like dictionaries and arrays. You can get an overview by typing <a href=x-man-page://5/plist><span class=mono>man 5 plist</span></a> in a Terminal window. Browsing to Apple’s Mac Dev Center, <a href=http://developer.apple.com/mac>http://developer.apple.com/mac</a> (free) and searching for “Property List Programming Guide” will give you the whole story. Codeless language modules are dictionaries (<span class=mono>&lt;dict&gt;</span>) matching values to key strings that identify them.
+</p>
+<p>
+Apple’s Xcode development environment provides a graphical editor for plists, and editor applications are available on the Internet, but this reference assumes you’ll write modules using BBEdit itself. BBEdit comes with a generic clipping set for property lists, which it selects automatically when you edit a file with the <span class=mono>.plist</span> extension.
+</p>
+<p>
+BBEdit gives you a choice of two strategies for constructing codeless language modules . The string-based strategy requires only that you provide literal string tokens for strings, comments, and keywords. The regular-expression-based strategy gives you finer control over how BBEdit colors and indexes your files, but it requires comfort with large regular expressions.
+</p>
+<p>Once you’ve completed your language module, place it in the <span class=mono>Language Modules</span> subfolder of BBEdit's application support folder, and then quit and relaunch BBEdit in order to load it.</p>
+<dl>
+ <dt>Note:</dt>
+ <dd>By default, BBEdit's application support folder is located at: <span class=mono>/Users/USERNAME/Library/Application Support/BBEdit/</span> though if you use Dropbox, you can optionally move this folder into your <span class=mono>Dropbox</span> data folder as detailed in Chapter 2 of the PDF manual.</dd>
+</dl>
+<hr>
+<div id=KeysForCodelessLanguageModules class=section>Keys for Codeless Language Modules</div>
+<p>
+As dictionary property lists, codeless language modules are organized as a series of defined keys, paired with string, Boolean, array, and dictionary values. A few are mandatory; most are optional, or are alternatives to others, depending on your approach to the module. This section will list all of the keys and their functions.
+</p>
+<hr>
+<div id=KeysForAllModules class=subsection>Keys for All Modules</div>
+<p>These keys apply to both string-based and regular-expression-based codeless language modules. They identify the plist to BBEdit as a language module, and tell it how to identify and present the language.
+</p>
+<div id=Identification class=subsubsection>Identification</div>
+<table class=tagheader>
+<tbody><tr id=BBEditDocumentType>
+ <td class=tagname>BBEditDocumentType</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>mandatory</td>
+<tr>
+</table>
+<p>This string must be <span class=mono>CodelessLanguageModule</span>. If it is not present, BBEdit won’t recognize the plist as a language module, and will ignore the file.
+</p>
+<table class=tagheader>
+<tbody><tr id=BBLMLanguageDisplayName>
+ <td class=tagname>BBLMLanguageDisplayName</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>mandatory</td>
+<tr>
+</table>
+<p>This is the name BBEdit will display in popup menus and preferences for this language. The name should be enough to identify the language, but not so long that it doesn’t fit. Examples are “C,” “HTML,” and “Perforce Specification.”
+</p>
+<table class=tagheader>
+<tbody><tr id=BBLMLanguageCode>
+ <td class=tagname>BBLMLanguageCode</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>mandatory</td>
+<tr>
+</table>
+<p>A four-character ASCII string that <em>uniquely</em> identifies the language this module describes. It must not be the same as the code for any other CLM, nor for languages built into BBEdit.
+</p>
+<p>Unfortunately, your first clue that you’ve picked a conflicting code may be that your text gets colored and indexed as though it were in some other language. If that happens, this is the first issue you should look for.
+</p>
+<div id=FileMapping class=subsubsection>File Mapping</div>
+<p>
+Codeless language modules have two complementary ways of claiming files. <span class=clmkey>BBLMSuffixMap</span> lists filename suffixes that, if they match a file’s name, claim the file for that module. <span class=clmkey>BBLMFileNamesToMatch</span> lets you provide a set of whole-name patterns that will identify files as belonging to your language. Both are optional, but if you don’t provide either, your user will have to choose your language from the language popup whenever she wants to use it.
+</p>
+<p>
+BBEdit assigns a language module to a file, based on the file’s name, in three steps:
+</p>
+<ul>
+ <li>If the file has a suffix that the user has assigned to a language with a Custom Extension Mapping in the Languages preference panel, that module is used.</li>
+ <li>If the name ends with a string in a module’s <span class=clmkey>BBLMSuffixMap</span> list, the module claims the file.</li>
+ <li>If the name matches the pattern in a module’s <span class=clmkey>BBLMFileNamesToMatch</span> list, that module claims the file.</li>
+</ul>
+<p>Each stage is run against all modules before the next is attempted. The process stops at the first match. The order of modules in the matching process is not guaranteed; if more than one module claims a file pattern, the winner is not predictable.</p>
+<p>
+A third key, <span class=clmkey>BBLMPreferredFilenameExtension</span>, gives BBEdit a file-name extension to suggest when the user first saves a file.
+</p>
+<table class=tagheader>
+<tbody><tr id=BBLMSuffixMap>
+ <td class=tagname>BBLMSuffixMap</td>
+ <td class=tagtype>array of dictionaries</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<p>The suffix map is an array of dictionaries, one for each type of file that this language can use. Each dictionary claims a file extension for the language.
+</p>
+<p>
+The mapping dictionaries use only one key:
+</p>
+<table class=tagheader>
+<tbody><tr id=BBLMLanguageSuffix>
+ <td class=tagname>BBLMLanguageSuffix</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>mandatory<br>in suffix map dictionaries</td>
+<tr>
+</table>
+<p>This string is the <em>suffix</em> (not the extension — you must include the dot to specify an extension) that identifies files of this specific type. Examples include <span class=mono>.h</span>, <span class=mono>.plist</span>, or <span class=mono>Makefile</span>. 
+</p>
+<dl>
+ <dt>Note:</dt>
+ <dd>
+ If you are familiar with earlier versions of BBEdit, you'll remember that suffix-map dictionaries included <span class=clmkey>BBLMIsSourceKind</span> and <span class=clmkey>BBLMIsHeaderKind</span> to designate “source” and “header” counterparts. Recent versions of BBEdit ignore these tags — counterpart matching is now done by a more sophisticated examination of file names.
+ </dd>
+</dl>
+<p>Here’s an example of a suffix map for the DTrace scripting language, in which <span class=mono>.d</span> files are source, and <span class=mono>.h</span> files are headers:
+</p>
+<div class=verbatim>
+&lt;key&gt;BBLMSuffixMap&lt;/key&gt;
+&lt;array&gt;
+ &lt;dict&gt;
+    &lt;key&gt;BBLMLanguageSuffix&lt;/key&gt;       &lt;string&gt;.d&lt;/string&gt;
+ &lt;/dict&gt;
+ &lt;dict&gt;
+    &lt;key&gt;BBLMLanguageSuffix&lt;/key&gt;       &lt;string&gt;.h&lt;/string&gt;
+ &lt;/dict&gt;
+&lt;/array&gt;
+</div>
+<p>In the absence of a <span class=clmkey>BBLMPreferredFilenameExtension</span> key, BBEdit will suggest the first suffix in the map as the filename extension when the user first saves (or saves-as) a file.
+</p>
+<table class=tagheader>
+<tbody><tr id=BBLMFileNamesToMatch>
+ <td class=tagname>BBLMFileNamesToMatch</td>
+ <td class=tagtype>array of string</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<p>
+Your language uses this list of string patterns to claim files on a whole-name basis. If a file’s name matches one of these patterns, BBEdit assigns your module to the file. The patterns use the same “glob” syntax you may have used in command-line shells.
+</p>
+<p>
+This is useful if your module handles a class of files with no common elements to their names. BBEdit’s installed modules use this pattern to claim <span class=mono>Rakefile</span> for Ruby, and <span class=mono>README</span>, <span class=mono>COPYING</span>, and <span class=mono>INSTALLING</span> for “Software Package Notes.”
+</p>
+<p>
+Mac&nbsp;OS&nbsp;X’s HFS+ file system is (by default) case-insensitive, and so are these patterns. If the pattern list contains <span class=mono>*.c</span>, for instance, the pattern will capture both <span class=mono>foo.c</span> and <span class=mono>foo.C</span>.
+</p>
+<table class=tagheader>
+<tbody><tr id=BBLMPreferredFilenameExtension>
+ <td class=tagname>BBLMPreferredFilenameExtension</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<p>When the user chooses Save As… (or Save for the first time) on a file, and has designated a language with the editor window’s language popup, BBEdit will suggest this string as the file name extension. Unlike the suffix-mapping table, the preferred extension should <em>not</em> begin with a dot. For a DTrace source file, this entry might be
+</p>
+<div class=verbatim>
+&lt;key&gt;BBLMPreferredFilenameExtension&lt;/key&gt;       &lt;string&gt;d&lt;/string&gt;
+</div>
+<p>
+If <span class=clmkey>BBLMPreferredFilenameExtension</span> is not present in the CLM, BBEdit will suggest the first extension in the module’s suffix map.
+</p>
+<dl>
+ <dt>Note:</dt>
+ <dd>
+You can also set the preferred extension through an expert preference. The form is
+<div class=verbatim>
+defaults write com.barebones.bbedit \
+    PreferredFilenameExtension_<span class=meta>LanguageName</span> \
+    -string "abc"
+</div>
+<p>… where <span class=meta>LanguageName</span> is the name of your language, as specified by the <span class=clmkey>BBLMLanguageDisplayName</span> tag. The preference name is like any other parameter to a UNIX shell command — if it contains a space or other special characters, you must quote or escape it.
+</p></dd>
+</dl>
+<div id=Services class=subsubsection>Services</div>
+<table class=tagheader>
+<tbody><tr id=BBLMSupportsTextCompletion>
+ <td class=tagname>BBLMSupportsTextCompletion</td>
+ <td class=tagtype>Boolean</td>
+ <td class=tagoptional>optional<br>default false</td>
+<tr>
+</table>
+<p>The name of this key is misleading: BBEdit will offer text completion regardless of whether <span class=clmkey>BBLMSupportsTextCompletion</span> is set. Instead, it controls how completions are offered.</p>
+<p>If <span class=clmkey>&lt;false/&gt;</span> (the default), when the user triggers text completion, BBEdit will offer completions from symbols that are anywhere in the text, as well as the system spelling dictionary.
+</p>
+<p>If <span class=clmkey>&lt;true/&gt;</span>, BBEdit will offer completions from the spelling dictionary within strings and comments. If the cursor is in code (not a string or a comment), BBEdit will offer completions only from ctags, clipping names, and symbols already in the code portions of the file.
+</p>
+<p>In this context, “symbols” are any runs of text defined by the “<a href=#IdentifyingKeywordStrings>Identifier and Keyword</a>” character sets. Spelling-dictionary words will be offered only if the user has enabled the feature in the “Editing” preferences panel.
+</p>
+<table class=tagheader>
+<tbody><tr id=BBLMCanSpellCheckCodeRuns>
+ <td class=tagname>BBLMCanSpellCheckCodeRuns</td>
+ <td class=tagtype>Boolean</td>
+ <td class=tagoptional>optional<br>default false</td>
+<tr>
+</table>
+<p>If <span class=clmkey>&lt;true/&gt;</span>, BBEdit will apply its spelling checker to any words that are neither keywords, nor within comments or strings. 
+</p>
+<p>If the language is a markup language like Markdown or LaTeX, and therefore mostly human-readable text, it would be convenient to set this key to <span class=clmkey>&lt;true/&gt;</span>. Programming languages would usually set <span class=clmkey>BBLMCanSpellCheckCodeRuns</span> to <span class=clmkey>&lt;false/&gt;</span>.
+</p>
+<table class=tagheader>
+<tbody><tr id=BBLMReferenceSearchURLTemplate>
+ <td class=tagname>BBLMReferenceSearchURLTemplate</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<p>Users can use the Languages panel of the Preferences window to set custom preferences for a language, including a template for a URL that will return documentation for a selected symbol. Use this tag to specify a default template to be used for files claimed by this module. 
+</p>
+<p>Specify the whole URL, putting <span class=mono>__SYMBOLNAME__</span> where the symbol to be looked up should go. Example:
+</p>
+<div class=verbatim>http://www.example.com/foobar.cgi?__SYMBOLNAME__
+</div>
+<table class=tagheader>
+<tbody><tr id=BBLMIsCaseSensitive>
+ <td class=tagname>BBLMIsCaseSensitive</td>
+ <td class=tagtype>Boolean</td>
+ <td class=tagoptional>optional<br>default false</td>
+<tr>
+</table>
+<p>This tag controls whether the module itself takes case into account when it matches strings.</p>
+<p>If <span class=clmkey>&lt;true/&gt;</span>, keywords and pattern strings will match text only if they match case (“BBEdit” will match “BBEdit”, but not “bbedit”). If <span class=clmkey>&lt;false/&gt;</span>, text need not match string or pattern case (“BBEdit” will match “bbedit” as well as “BBEdit”).
+</p>
+<table class=tagheader>
+<tbody><tr id=BBLMScansFunctions>
+ <td class=tagname>BBLMScansFunctions</td>
+ <td class=tagtype>Boolean</td>
+ <td class=tagoptional>optional<br>default false</td>
+<tr>
+</table>
+<p>If <span class=clmkey>&lt;true/&gt;</span>, BBEdit will attempt to extract function names from the text, and put them into the function navigation pop-up menu for quick access. Under <span class=clmkey>Language Features</span>, you must specify either <span class=clmkey>Identifier and Keyword Characters</span> or <span class=clmkey>Identifier and Keyword Character Class</span>; and either <span class=clmkey>Prefix for Functions</span> or <span class=clmkey>Function Pattern</span>.
+</p>
+<p>If <span class=clmkey>&lt;false/&gt;</span> or absent, BBEdit won’t put a function pop-up in the navigation bar, even if you provide a function pattern or prefix.
+</p>
+<div id=ControllingSyntaxColoring class=subsubsection>Controlling Syntax Coloring</div>
+<p>These tags control syntax coloring for both types of codeless language module. They turn coloring on and off, and identify words the module is to color as keywords or predefined names.
+</p>
+<table class=tagheader>
+<tbody><tr id=BBLMColorsSyntax>
+ <td class=tagname>BBLMColorsSyntax</td>
+ <td class=tagtype>Boolean</td>
+ <td class=tagoptional>optional<br>default false</td>
+<tr>
+</table>
+<p>A Boolean element (either <span class=clmkey>&lt;true/&gt;</span> or <span class=clmkey>&lt;false/&gt;</span>) that determines whether BBEdit will color strings, comments, and keywords. If you omit this key, BBEdit will not do syntax coloring.
+</p>
+<table class=tagheader>
+<tbody><tr id=BBLMKeywordList>
+ <td class=tagname>BBLMKeywordList</td>
+ <td class=tagtype>array of string</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<p>A list of <span class=mono>&lt;string&gt;</span> elements indicating words BBEdit should color as keywords. BBEdit defines a word as a complete, contiguous run of characters defined by <span class=clmkey>Identifier and Keyword Characters</span> or <span class=clmkey>Identifier and Keyword Character Class</span> under <span class=clmkey>Language Features</span>.
+</p>
+Example:
+<div class=verbatim>
+&lt;key&gt;BBLMKeywordList&lt;/key&gt;
+&lt;array&gt;
+    &lt;string&gt;auto&lt;/string&gt;
+    &lt;string&gt;goto&lt;/string&gt;
+    &lt;string&gt;sizeof&lt;/string&gt;
+    &lt;string&gt;break&lt;/string&gt;
+    .
+    .
+    .
+&lt;/array&gt;
+</div>
+<table class=tagheader>
+<tbody><tr id=BBLMPredefinedNameList>
+ <td class=tagname>BBLMPredefinedNameList</td>
+ <td class=tagtype>array of string</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<p>A list of <span class=mono>&lt;string&gt;</span> elements that identify words BBEdit should color as “predefined names” (as used in the Text Colors preferences). BBEdit identifies words the same way as it does for the <span class=clmkey>BBLMKeywordList</span>.
+</p>
+<dl>
+ <dt>Note:</dt>
+ <dd>
+There is no need to sort the keyword or predefined-name lists.
+</dd>
+</dl>
+<dl>
+ <dt>Note:</dt>
+ <dd>
+BBEdit will include your keywords and predefined names in code-completion lists.
+</dd>
+</dl>
+<div id=UnCommentMarkers class=subsubsection>Un/Comment Tokens</div>
+<p>These patterns are tokens that begin and end comments in your language. Beginning with BBEdit 10.1, BBEdit will use them to respond to the Un/Comment Selection command in the Text menu.</p>
+<p>You <em>must</em> specify either line-comment or block-comment tokens. If you specify both, Un/Comment Selection will choose by following the <span class=mono>PreferLineCommentsWhenCommenting</span> expert preference. If you specify one, BBEdit will use that method regardless of the setting of <span class=mono>PreferLineCommentsWhenCommenting</span>.</p>
+<p>The comment patterns under <span class=clmkey>Language Features</span> are still used to determine what text is to be colored as comments. Unlike the comment-delimiter strings, the Un/Comment patterns remain in effect if you use regular-expression patterns.</p>
+<table class=tagheader>
+<tbody><tr id=BBLMCommentLineDefault>
+ <td class=tagname>BBLMCommentLineDefault</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>mandatory<br>if prefix/suffix not specified</td>
+<tr>
+</table>
+<p>If this tag is set, selecting Un/Comment Selection in the Text menu will prepend this string to each line that contains the selection. You’d set this to <span class=mono>//</span> in a C-family language, or <span class=mono>#</span> in most scripting languages.</p>
+<dl><dt>Note:</dt>
+<dd>See the beginning of this section for how this setting interacts with the <span class=mono>PreferLineCommentsWhenCommenting</span> expert preference.</dl>
+<p>You must set this tag if you do not provide <span class=clmkey>BBLMCommentPrefixDefault</span> and <span class=clmkey>BBLMCommentSuffixDefault</span>.
+<table class=tagheader>
+<tbody><tr id=BBLMCommentPrefixDefault>
+ <td class=tagname>BBLMCommentPrefixDefault</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>mandatory<br>if line not specified</td>
+<tr>
+</table>
+<table class=tagheader>
+<tbody><tr id=BBLMCommentSuffixDefault>
+ <td class=tagname>BBLMCommentSuffixDefault</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>mandatory<br>if line not specified</td>
+<tr>
+</table>
+<p>If these tags are set, selecting Un/Comment Selection in the Text menu will surround the selected lines with the prefix and suffix tokens. In C-family languages, these strings would be <span class=mono>/*</span> and <span class=mono>*/</span> respectively.</p>
+<dl><dt>Note:</dt>
+<dd>See the beginning of this section for how these tags interact with the <span class=mono>PreferLineCommentsWhenCommenting</span> expert preference.</dl>
+<p>If either of these tags is set, the other must be set as well. You must provide this pair if <span class=clmkey>BBLMCommentLineDefault</span> is not set.</p>
+<hr>
+<div id=LanguageFeatures class=subsection>Language Features</div>
+<table class=tagheader>
+<tbody><tr id="Language Features">
+ <td class=tagname>Language Features</td>
+ <td class=tagtype>dictionary</td>
+ <td class=tagoptional>mandatory</td>
+<tr>
+</table>
+<p>The Language Features dictionary tells BBEdit how to identify features of your language such as strings, comments, and symbols. This section divides the features dictionary into two strategies: <a href=#StringBasedPatterns>String-based</a>, which identifies features by matching literal strings, and <a href=#RegularExpressionPatterns>regular-expression-based</a>, which identifies features by regular expressions. It is possible to mix the strategies, but in general, providing regular-expression patterns will cause string patterns to be ignored.
+</p>
+<div id=IdentifyingKeywordStrings class=subsubsection>Identifying keyword strings</div>
+<p>These keys are used regardless of your strategy. They tell BBEdit how to identify a run of characters as a single token in your language. A token is defined to be any continuous run of characters you specify for these keys. 
+</p>
+<p>One way BBEdit uses these character sets is to distinguish keywords from words that happen to contain them. Even if <span class=mono>begin</span> is in your <span class=clmkey>BBLMKeywordList</span>, BBEdit won’t highlight the first five letters in <span class=mono>beginning</span>, because it matches against character runs, and the whole run doesn’t match.
+</p>
+<p>These character classes can’t fully identify <em>legal</em> tokens: If the set contains alphanumeric characters and underscore, BBEdit still won’t know about your language’s requirement that identifiers not begin with numerals. However, the character-class mechanism is good enough for the purpose of syntax coloring.
+</p>
+<p>You must supply one of these tags or the other.</p>
+<table class=tagheader>
+<tbody><tr id="Identifier and Keyword Characters">
+ <td class=tagname>Identifier and Keyword Characters</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>mandatory<br>if no Character Class</td>
+<tr>
+</table>
+<p>This is a string containing every character your language permits in a token (for instance, a keyword, predefined symbol, or function name). For a C-family language, this would be
+</p>
+<div class=verbatim>
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_
+</div>
+<table class=tagheader>
+<tbody><tr id="Identifier and Keyword Character Class">
+ <td class=tagname>Identifier and Keyword Character Class</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>mandatory<br>if no Character Set</td>
+<tr>
+</table>
+<p>This string provides a more compact way to specify token characters. To simplify: BBEdit internally encloses this string in brackets (<span class=mono>[]</span>) for use in a PCRE regular expression. C-family tokens could be expressed as
+</p>
+<div class=verbatim>A-Za-z0-9_
+</div>
+You can include any UTF-16 character, or the same escaped characters BBEdit accepts in the Find window: 
+<ul>
+<li> Standard character escapes like <span class=mono>\t</span> for tabs, or <span class=mono>\\</span> for backslashes.</li>
+<li> Characters specified in hexadecimal with the <span class=mono>\x<span class=meta>NN</span></span> notation.</li>
+</ul>
+<div id=StringBasedPatterns class=subsubsection>String-Based Patterns</div>
+<p>The easiest way to mark language elements is by providing literal strings to delimit them. This is an effective technique for most languages: Provide delimiters for common constructs like comments, strings, and statement blocks, and BBEdit will color, index, and fold code accurately enough to satisfy most requirements.
+</p>
+<div id=StringLikeElements class=subsubsubsection>String-like Elements</div>
+<p>These strings identify runs of characters as either comments or strings. There are two kinds of comments: Block comments, which run from an opening token to a closing token, and line comments, which run from an opening token to the end of the current line.
+</p>
+<p>BBEdit allows your language to have two kinds of strings. This follows the pattern of C-family languages that enclose character literals in single quotes, and character-array literals in double quotes. You specify them separately as strings 1 and 2.
+</p>
+<p>If you specify any regular-expression patterns, all of these tags will be ignored.</p>
+<a name=CommentDelimiterStrings></a>
+<table class=tagheader>
+<tbody><tr id="Open Block Comments">
+ <td class=tagname>Open Block Comments</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<table class=tagheader>
+<tbody><tr id="Close Block Comments">
+ <td class=tagname>Close Block Comments</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>mandatory<br>if open specified</td>
+<tr>
+</table>
+<p>These tokens delimit comments that can end before the end of a line, or that can span more than one line. Examples are <span class=mono>/*</span> … <span class=mono>*/</span> in C-family languages, or <span class=mono>=begin</span> … <span class=mono>=end</span> in Ruby. The Ruby example raises an important point: Ruby’s block-comment delimiters must appear at the left margin, a restriction that a simple token can’t express. If you need to enforce such a condition, use regular-expression patterns.
+</p>
+<table class=tagheader>
+<tbody><tr id="Open Line Comments">
+ <td class=tagname>Open Line Comments</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<p>Line comments run from the opening token to the end of a line, and then stop. Examples are <span class=mono>//</span> in C-family languages, <span class=mono>%</span> in TeX, or <span class=mono>#</span> in most scripting languages. 
+</p>
+<p>In versions of BBEdit before 10.1, and in later versions if you do not specify <a href=#UnCommentMarkers>Un/Comment tokens</a>, BBEdit will respond to the Un/Comment Selection command in the Text menu by adding or removing these comment tokens from the selected lines. If the <span class=mono>PreferLineCommentsWhenCommenting</span> expert preference is set to <span class=mono>YES</span> (as it is by default), Un/Comment Selection will use the <span class=clmkey>Open Line Comments</span> token to convert selected lines to comments; otherwise it will surround the selection with the block-comment tokens.
+</p>
+<p>This feature has been superseded in BBEdit 10.1 and later by <span class=clmkey>BBLMCommentPrefixDefault</span>, <span class=clmkey>BBLMCommentSuffixDefault</span>, and <span class=clmkey>BBLMCommentLineDefault</span>. See the “<a href=#UnCommentMarkers>Un/Comment Tokens</a>” section for details.
+</p>
+<table class=tagheader>
+<tbody><tr id=OpenStrings1>
+ <td class=tagname>Open Strings&nbsp;1</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<table class=tagheader>
+<tbody><tr id=OpenStrings2>
+ <td class=tagname>Open Strings&nbsp;2</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<table class=tagheader>
+<tbody><tr id=CloseStrings1>
+ <td class=tagname>Close Strings&nbsp;1</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>mandatory<br>if open specified</td>
+<tr>
+</table>
+<table class=tagheader>
+<tbody><tr id=CloseStrings2>
+ <td class=tagname>Close Strings&nbsp;2</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>mandatory<br>if open specified</td>
+<tr>
+</table>
+<p>These tokens delimit runs of characters that make up a string in your language. Many languages have more than one kind of string, and BBEdit allows you to specify separate delimiters — both opening and closing — for two string types.
+</p>
+<table class=tagheader>
+<tbody><tr id="Escape Char in Strings&nbsp;1">
+ <td class=tagname>Escape Char in Strings&nbsp;1</td>
+ <td class=tagtype>string (length&nbsp;1)</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<table class=tagheader>
+<tbody><tr id="Escape Char in Strings&nbsp;2">
+ <td class=tagname>Escape Char in Strings&nbsp;2</td>
+ <td class=tagtype>string (length&nbsp;1)</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<p>Most languages let authors put string delimiters inside strings if they precede them with an “escape” character (typically a backslash). These keys specify the escape character for type-1 and type-2 strings. 
+</p>
+<p>BBEdit will ignore escaped delimiters, and will continue coloring a string until it encounters an unescaped closing delimiter for the current type of string.
+</p>
+<table class=tagheader>
+<tbody><tr id="End-of-line Ends Strings&nbsp;1">
+ <td class=tagname>End-of-line Ends Strings&nbsp;1</td>
+ <td class=tagtype>Boolean</td>
+ <td class=tagoptional>optional<br>default false</td>
+<tr>
+</table>
+<table class=tagheader>
+<tbody><tr id="End-of-line Ends Strings&nbsp;2">
+ <td class=tagname>End-of-line Ends Strings&nbsp;2</td>
+ <td class=tagtype>Boolean</td>
+ <td class=tagoptional>optional<br>default false</td>
+<tr>
+</table>
+<p>If this key is <span class=clmkey>&lt;false/&gt;</span> for the given string type, BBEdit will continue coloring the string even if it contains a line break:
+</p>
+<div class=verbatim><span style=color:red>"This string is colored,
+even though it is on more than one line."</span>
+</div>
+<p>If this key is <span class=clmkey>&lt;true/&gt;</span>, BBEdit will stop coloring a string when it encounters a line break, even if it hasn’t found an end-of-string token:
+</p>
+<div class=verbatim><span style=color:red>"This part of the string is colored,</span>
+but this part isn’t."
+</div>
+<p><em>However</em>, if the end-of-line is preceded by the escape character for the given string type, BBEdit will continue coloring the string at least through the next line:
+</p>
+<div class=verbatim><span style=color:red>"Because of this backslash -&gt; \
+this whole string is colored."</span>
+</div>
+<dl>
+ <dt>Note:</dt>
+ <dd>Take care with the capitalization of these keys: The “l” in “line” is lower-case.</dd>
+</dl>
+<div id=StructuralElements class=subsubsubsection>Structural Elements</div>
+<p>The simple-string keys in this section guide BBEdit in identifying functions for the function pop-up, and statement blocks for folding.
+</p>
+<table class=tagheader>
+<tbody><tr id="Prefix for Functions">
+ <td class=tagname>Prefix for Functions</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<table class=tagheader>
+<tbody><tr id="Prefix for Procedures">
+ <td class=tagname>Prefix for Procedures</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<p>Some languages begin subprogram definitions with keywords like <span class=mono>FUNCTION</span> and <span class=mono>PROCEDURE</span> in Pascal, or <span class=mono>sub</span> in Perl. These tokens signal BBEdit that it should treat the symbol that follows as the name of a subprogram, and index it in the function pop-up.
+</p>
+<p>If these keys are absent, and you aren’t using regular-expression patterns for structural elements in your language, BBEdit will assume the language uses a C-style prefix — the return type of the function.
+</p>
+<table class=tagheader>
+<tbody><tr id="Open Parameter Lists">
+ <td class=tagname>Open Parameter Lists</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<table class=tagheader>
+<tbody><tr id="Close Parameter Lists">
+ <td class=tagname>Close Parameter Lists</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>mandatory<br>if open specified</td>
+<tr>
+</table>
+<p>In most languages, subprograms may optionally take parameter lists. You’d rarely specify anything other than open and close parentheses, but these keys allow you a full range of options.
+</p>
+<table class=tagheader>
+<tbody><tr id="Terminator for Prototypes&nbsp;1">
+ <td class=tagname>Terminator for Prototypes&nbsp;1</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<table class=tagheader>
+<tbody><tr id="Terminator for Prototypes&nbsp;2">
+ <td class=tagname>Terminator for Prototypes&nbsp;2</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<p>Some languages allow for forward declarations — constructs that show how a subprogram is to be called, in advance of defining the body of the function. Examples are prototypes in C-family languages (which end with “<span class=mono>;</span>”), or <span class=mono>FORWARD</span> and <span class=mono>EXTERNAL</span> declarations in Pascal. If BBEdit encounters one of these tokens before it sees the beginning of a statement block, it does not index the declaration in the function pop-up.
+</p>
+<table class=tagheader>
+<tbody><tr id="Open Statement Blocks">
+ <td class=tagname>Open Statement Blocks</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<table class=tagheader>
+<tbody><tr id="Close Statement Blocks">
+ <td class=tagname>Close Statement Blocks</td>
+ <td class=tagtype>string</td>
+ <td class=tagoptional>mandatory<br>if open specified</td>
+<tr>
+</table>
+<p>
+Many languages group statements by enclosing them in block delimiters — <span class=mono>{</span> … <span class=mono>}</span> in C-family languages, or <span class=mono>BEGIN</span> … <span class=mono>END</span> in Pascal. These keys specify the opening and closing tokens for such blocks. BBEdit detects blocks (even nested ones) and makes it possible to fold them.
+</p>
+<p>
+Unfortunately, some languages (such as Python or Ruby) don’t have simple paired delimiters. Single-token matching does not cover such situations, which is one reason BBEdit comes with coded language modules for these languages.
+</p>
+<div id=RegularExpressionPatterns class=subsubsection>Regular-Expression Patterns</div>
+<p>
+The string patterns are adequate for most purposes, and are easy to specify. However, if your language is more complex, or you want more control over how BBEdit detects elements, you can provide Perl-compatible regular expressions (PCREs) for them.
+</p>
+<p>
+Because of the way BBEdit processes regular-expression patterns internally, if you need to make backreferences in a pattern, you must use named subpatterns instead of positional (numbered) backreferences.
+</p>
+<dl>
+ <dt>Note:</dt>
+ <dd>Regular-expression syntax often conflicts with that of XML, the format for property lists. Using XML entities like <span class=mono>&amp;lt;</span> can make patterns very difficult to read and edit. The <a href=#Examples>examples</a> in this reference show how to break regular expressions out of the XML syntax using <span class=mono>CDATA</span> blocks. See the <a href=#Tips>Tips</a> section for details.
+ </dd>
+</dl>
+<div id=REStringLikeElements class=subsubsubsection>String-like Elements</div>
+<p>
+As with the string patterns, these pattern expressions identify character runs for strings and comments. If you use either of these tags, the string and comment tokens listed as <a href=#StringLikeElements>String-like Elements</a> in the <a href=#StringBasedPatterns>String-Based Patterns</a> section will be ignored.
+</p>
+<table class=tagheader>
+<tbody><tr id="Comment Pattern">
+ <td class=tagname>Comment Pattern</td>
+ <td class=tagtype>string (PCRE)</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<p>BBEdit will color any text in a file in your language that matches this pattern as a comment. There is only one pattern for all kinds of comments, so you will usually write an alternative pattern to cover each:
+</p>
+<div class=verbatim>
+(?x:
+    (//.*$)        |    (?# Line comment)
+    (?s:/\*.*?\*/) |    (?# Block comment)
+    (?s:#if\s+0\b       (?# #if-out block)
+        .+?
+        (#else|#endif))
+)
+</div>
+<p>is good enough for line comments and block comments in C-family languages. It also catches blocks guarded by <span class=mono>#if&nbsp;0</span> … <span class=mono>#endif</span> directives, showing (roughly) how the regular-expression pattern expands your options.
+</p>
+<dl>
+ <dt>Note:</dt>
+ <dd>
+See “Perl-Style Pattern Extensions” in the "Searching with Grep" chapter of the User Manual (or in the online help) for an explanation of the <span class=mono>?x:</span>, <span class=mono>?s:</span> and <span class=mono>?#</span> pattern modifiers.
+</dd>
+</dl>
+<table class=tagheader>
+<tbody><tr id="String Pattern">
+ <td class=tagname>String Pattern</td>
+ <td class=tagtype>string (PCRE)</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<p>If text in a file matches this PCRE, BBEdit will color it as a string. This one pattern must match every type of string you want to color, but regular expressions are flexible enough to handle multiple cases. For instance, this expression matches single- and double-quoted strings, as well as the “here documents” found in most scripting languages. It accounts for escaped delimiters and newlines:
+</p>
+<div class=verbatim>(?x:
+    ("(\\"|[^"\r]|\\\r)*") |  (?# Double-quote)
+    ('(\\'|[^'\r]|\\\r)*') |  (?# Single-quote)
+    (?s:                      (?# Here-document)
+        &lt;&lt;-?(?P&lt;delim&gt;\w+)
+        .*?
+        (?P=delim)
+    )
+)
+</div>
+<div id=REStructuralElements class=subsubsubsection>Structural Elements</div>
+<p>The regular-expression pattern strategy identifies functions by the <span class=clmkey>Function Pattern</span> expression, supplemented by the <span class=clmkey>Skip Pattern</span>. If you use either of these tags, <em>all</em> of the tokens listed the in the <a href=#StringBasedPatterns>String-Based Patterns</a> section above (string, comment, and structural) will be ignored.
+</p>
+<table class=tagheader>
+<tbody><tr id="Function Pattern">
+ <td class=tagname>Function Pattern</td>
+ <td class=tagtype>string (PCRE)</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<p>
+This regular-expression pattern identifies the whole body of a function in your language, and its name. BBEdit will offer to fold the function body, and will suspend its search for additional functions until after the body of the current function. It uses the name of the function to index it in the function pop-up of the navigation bar.
+</p>
+<p>
+The function pattern should include two named subpatterns, <span class=mono>function</span> for the span of the complete function, and <span class=mono>function_name</span> to pinpoint the name. If you don’t designate a subpattern named "<span class=mono>function</span>", the whole <span class=clmkey>Function Pattern</span> will be used to identify functions. If you omit the <span class=mono>function_name</span> subpattern, BBEdit will not include the function in the function pop-up.
+</p>
+<p>
+The following is a simplified pattern that recognizes a method declaration in Ruby:
+</p>
+<div class=verbatim>(?x: 
+    (?P&lt;leadspace&gt;^\s*)
+    (?P&lt;function&gt;
+        def\s+
+        (?P&lt;function_name&gt;
+            [a-zA-Z0-9_!?]+
+        )
+        (?s:.+?)
+        \r(?P=leadspace)end\b
+    )
+)
+</div>
+<ul>
+<li> The pattern captures a run of whitespace characters at the beginning of a line, followed by the keyword <span class=mono>def</span>, which begins the function, and thus the named <span class=mono>function</span> pattern.</li>
+<li> Next comes a run of symbol characters, which is captured as the <span class=mono>function_name</span>.</li>
+<li> The function body is a run of any characters (including newlines, as specified by the <span class=mono>?s:</span> pattern modifier)…</li>
+<li> … that ends with a newline, the same run of whitespace that came before the <span class=mono>def</span> keyword (captured in the named backreference <span class=mono>leadspace</span>), and the keyword <span class=mono>end</span>.</li>
+</ul>
+<dl>
+ <dt>Note:</dt>
+ <dd>
+The pattern is simplified by the forlorn assumption that the <span class=mono>end</span> keyword will be indented by exactly the same run of whitespace characters as came before the <span class=mono>def</span>.
+</dd>
+</dl>
+<p>
+As with all CLM regular-expression patterns, backreferences to subpatterns must be named — <span class=mono>(?P=</span>…<span class=mono>)</span> — and not positional (<span class=mono>\1</span>, <span class=mono>\2</span>, etc.).
+</p>
+<p>
+<span class=clmkey>BBLMScansFunctions</span> must be <span class=clmkey>&lt;true/&gt;</span> for the function pattern to be used. Because function scanning is turned off while a function pattern matches, embedded functions will not be indexed.
+</p>
+<table class=tagheader>
+<tbody><tr id="Skip Pattern">
+ <td class=tagname>Skip Pattern</td>
+ <td class=tagtype>string (PCRE)</td>
+ <td class=tagoptional>optional</td>
+<tr>
+</table>
+<p>
+When searching for function definitions, BBEdit advances through the text, character-by-character, until it detects a possible match. It then tests the ensuing character run. If the whole run matches the <span class=clmkey>Function Pattern</span>, it is indexed and folded as a function. If not, BBEdit advances to the next character and attempts to match a function from there.
+</p>
+<p>
+This strategy is not perfect, because if a string or comment includes an apparent function definition, BBEdit will index and fold that, as well. 
+</p>
+<p>
+The <span class=clmkey>Skip Pattern</span> overrides this behavior. If the <span class=clmkey>Function Pattern</span> does not match, BBEdit attempts to match the <span class=clmkey>Skip Pattern</span>. If that succeeds, it will suspend function matching until the skip text ends — saving BBEdit from trying to reapply the function pattern character-by-character.
+</p>
+<p>
+If you supply a <span class=clmkey>String Pattern</span>, the <span class=clmkey>Skip Pattern</span> can skip strings by including a <span class=monoshort>(?P&gt;string)</span> subpattern; similarly, <span class=monoshort>(?P&gt;comment)</span> will skip comments if you provided a <span class=clmkey>Comment Pattern</span>. A skip pattern that simply protects strings and comments would be:
+</p>
+<div class=verbatim>(?x:
+    (?P&gt;string) |
+    (?P&gt;comment)
+)
+</div>
+<hr>
+<div id=Examples class=section>Examples</div>
+Here are a few examples for “My Language,” a severe subset of the Ruby scripting language.
+<hr>
+<div id=TheBareMinimum class=subsection>The Bare Minimum</div>
+The first example shows the smallest codeless language module that will color keywords in a My Language file:
+<div class=verbatim>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+	"http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+
+&lt;!--  The smallest CLM that will color keywords.
+      Copyright (c) 2012 Bare Bones Software, Inc. --&gt;
+		
+&lt;dict&gt;
+	&lt;!-- You must identify the plist as a CLM: --&gt;
+	&lt;key&gt;BBEditDocumentType&lt;/key&gt;
+	&lt;string&gt;CodelessLanguageModule&lt;/string&gt;
+	
+	&lt;!-- You must identify your language: --&gt;
+	&lt;key&gt;BBLMLanguageDisplayName&lt;/key&gt;  &lt;string&gt;My Language&lt;/string&gt;
+	&lt;key&gt;BBLMLanguageCode&lt;/key&gt;         &lt;string&gt;MyL!&lt;/string&gt;
+	
+	&lt;!-- Not required, but there’s not much point to
+	     a language module if it doesn’t color syntax: --&gt;
+	&lt;key&gt;BBLMColorsSyntax&lt;/key&gt;         &lt;true/&gt;
+	
+	&lt;!-- Specify some keywords. This isn’t required, either,
+             but it provides something to color: --&gt;
+	&lt;key&gt;BBLMKeywordList&lt;/key&gt;
+	&lt;array&gt;
+		&lt;string&gt;class&lt;/string&gt;
+		&lt;string&gt;def&lt;/string&gt;
+		&lt;string&gt;if&lt;/string&gt;
+		&lt;string&gt;elsif&lt;/string&gt;
+		&lt;string&gt;else&lt;/string&gt;
+		&lt;string&gt;end&lt;/string&gt;
+		&lt;string&gt;do&lt;/string&gt;
+		&lt;string&gt;for&lt;/string&gt;
+		&lt;string&gt;return&lt;/string&gt;
+	&lt;/array&gt;
+	
+	&lt;!-- Specify a comment-out string: --&gt;
+	&lt;key&gt;BBLMCommentLineDefault&lt;/key&gt;   &lt;string&gt;#&lt;/string&gt;
+	
+	&lt;!-- You must specify the character set for
+             keywords and identifiers. Substitute your own:  --&gt;
+	&lt;key&gt;Language Features&lt;/key&gt;
+	&lt;dict&gt;
+		&lt;key&gt;Identifier and Keyword Character Class&lt;/key&gt;
+		&lt;string&gt;A-Za-z0-9_\?!&lt;/string&gt;
+	&lt;/dict&gt; 
+&lt;/dict&gt;
+&lt;/plist&gt;
+</div>
+There are a few things to notice here:
+<ul>
+<li> If you don’t want the module to do anything other than take up space in the language pop-up, just specify <span class=clmkey>BBEditDocumentType</span>, <span class=clmkey>BBLMLanguageDisplayName</span>, and <span class=clmkey>BBLMLanguageCode</span>. But this is the minimal <em>useful</em> language module.</li>
+<li> For syntax coloring, you must turn on <span class=clmkey>BBLMColorsSyntax</span>.</li>
+<li> For something to color, you must provide a list of keywords in <span class=clmkey>BBLMKeywordList</span>.</li>
+ <li>BBEdit requires that you provide a method — line or block — for commenting-out lines with the Un/Comment Selection command. In this case, <span class=clmkey>BBLMCommentLineDefault</span> specifies the <span class=mono>#</span> line-comment token.</li>
+<li> You must also specify how to identify keywords, in the <span class=clmkey>Language Features</span> dictionary, using either <span class=clmkey>Identifier and Keyword Characters</span> or <span class=clmkey>Identifier and Keyword Character Class</span>.</li>
+<li> You <em>don’t</em> have to provide a <span class=clmkey>BBLMSuffixMap</span> or <span class=clmkey>BBLMFileNamesToMatch</span> list. Without them, your user will have to pick the language out of the pop-up.</li>
+</ul>
+<hr>
+<div id=StringPatterns class=subsection>String patterns</div>
+This is where you commit to describing language features either by tokens or through regular expressions. Let’s do it the simple way first.
+<div id=Comments class=subsubsection>Comments</div>
+Add comment highlighting by adding these keys to the <span class=clmkey>Language Features</span> dictionary:
+<div class=verbatim>
+&lt;key&gt;Open Block Comments&lt;/key&gt;      &lt;string&gt;=begin&lt;/string&gt;
+&lt;key&gt;Close Block Comments&lt;/key&gt;     &lt;string&gt;=end&lt;/string&gt;
+&lt;key&gt;Open Line Comments&lt;/key&gt;       &lt;string&gt;#&lt;/string&gt;
+</div>
+<div id=Strings class=subsubsection>Strings</div>
+We’ll just add double-quoted strings to the <span class=clmkey>Language Features</span> dictionary — the only difference for single-quoted strings is that the keys will end in <span class=mono>2</span> instead of <span class=mono>1</span>, and the open and close tokens will be single quotes instead of double:
+<div class=verbatim>
+&lt;key&gt;Open Strings 1&lt;/key&gt;               &lt;string&gt;"&lt;/string&gt;
+&lt;key&gt;Close Strings 1&lt;/key&gt;              &lt;string&gt;"&lt;/string&gt;
+&lt;key&gt;Escape Char in Strings 1&lt;/key&gt;     &lt;string&gt;\&lt;/string&gt;
+&lt;key&gt;End-of-line Ends Strings 1&lt;/key&gt;   &lt;true/&gt;
+</div>
+<div id=Structures class=subsubsection>Structures</div>
+Ruby doesn’t have a single pair of tokens to group statements into blocks, but braces are reliable:
+<div class=verbatim>
+&lt;key&gt;Open Statement Blocks&lt;/key&gt;    &lt;string&gt;{&lt;/string&gt;
+&lt;key&gt;Close Statement Blocks&lt;/key&gt;   &lt;string&gt;}&lt;/string&gt;
+</div>
+There is no distinction between functions and procedures:
+<div class=verbatim>
+&lt;key&gt;Prefix for Functions&lt;/key&gt;     &lt;string&gt;def&lt;/string&gt;
+&lt;key&gt;Prefix for Procedures&lt;/key&gt;    &lt;string&gt;def&lt;/string&gt;
+</div>
+… and parameter lists are parenthesized:
+<div class=verbatim>
+&lt;key&gt;Open Parameter Lists&lt;/key&gt;     &lt;string&gt;(&lt;/string&gt;
+&lt;key&gt;Close Parameter Lists&lt;/key&gt;    &lt;string&gt;)&lt;/string&gt;
+</div>
+<hr>
+<div id=EXRegularExpressionPatterns class=subsection>Regular-Expression Patterns</div>
+If, instead, you adopt the regular-expression-based strategy, you need only provide one string, comment, function, and skip pattern each:
+<div id=Strings class=subsubsection>Strings</div>
+Provide one pattern to recognize every style of string your language supports. If you supply a string pattern, the simple-string matching patterns are ignored:
+<div class=verbatim>
+&lt;key&gt;String Pattern&lt;/key&gt;
+&lt;string&gt;&lt;![CDATA[
+(?x:
+    ("(\\"|[^"\r]|\\\r)*") | (?# Double-quote)
+    ('(\\'|[^'\r]|\\\r)*') | (?# Single-quote)
+    (?s:
+        &lt;&lt;-?(?P&lt;delim&gt;\w+)   (?# Here-document)
+        .*?
+        (?P=delim)
+    )
+)
+]]&gt;&lt;/string&gt;
+</div>
+<div id=ExREComments class=subsubsection>Comments</div>
+<p>Add one <span class=clmkey>Comment Pattern</span> to identify all types of comments:</p>
+<div class=verbatim>&lt;key&gt;Comment Pattern&lt;/key&gt;
+&lt;string&gt;&lt;![CDATA[
+(?x:
+    (\#.*?$) |               (?# Line comment)
+    (?s:^=begin\b.+?^=end\b) (?# Block comment)
+)
+]]&gt;&lt;/string&gt;
+</div>
+<p>If you provide either <span class=clmkey>String Pattern</span> or <span class=clmkey>Comment Pattern</span>, all string-based patterns for strings and comments will be ignored.
+</p>
+<div id=Functions class=subsubsection>Functions</div>
+You’ve seen this pattern before — it defines the span of functions (the <span class=mono>function</span> subpattern), and the function name (<span class=mono>function_name</span>).
+<div class=verbatim>
+&lt;key&gt;Function Pattern&lt;/key&gt;
+&lt;string&gt;&lt;![CDATA[
+(?x: 
+    (?P&lt;leadspace&gt;^\s*)
+    (?P&lt;function&gt;
+        def\s+
+        (?P&lt;function_name&gt;
+            [a-zA-Z0-9_!?]+
+        )
+        (?s:.+?)
+        \r(?P=leadspace)end
+    )
+)
+]]&gt;
+&lt;/string&gt;
+</div>
+<div id=Skip class=subsubsection>Skip</div>
+The <span class=clmkey>Skip Pattern</span> turns off function matching in sections of the text, such as comments and strings:
+<div class=verbatim>
+&lt;key&gt;Skip Pattern&lt;/key&gt;
+&lt;string&gt;&lt;![CDATA[
+(?x:
+    (?P&gt;comment) |
+    (?P&gt;string)
+)]]&gt;&lt;/string&gt;
+</div>
+<hr>
+<hr>
+<div id=Tips class=section>Tips</div>
+<p>
+Here are some ideas to make it easier to build a codeless language module:
+</p>
+<ul>
+<li> The easiest way to start a CLM of your own is to modify an existing one. Bare Bones offers a useful collection at <a href=https://www.barebones.com/support/bbedit/plugin_library.html>https://www.barebones.com/support/bbedit/plugin_library.html</a>.</li>
+<li> Apple provides a tool, <span class=mono>plutil</span>, that will, among other things, verify that a property list file is well-formed. (See <a href=x-man-page://1/plutil><span class=mono>man plutil</span></a> in the Terminal for other options.) In the Terminal, type </li>
+<div class=verbatim>plutil <span class=meta>/path/to/your.plist</span>
+</div>
+<p>… where you substitute the path to the CLM property list you want to check. The easiest way to get the path into Terminal is to drag the file from the Finder into the Terminal window. Or, you can select Copy Full Path from the File Path: popup in the toolbar of a BBEdit window, and paste into a Terminal window using the Paste Escaped Text (control-command-V) command.</p>
+<p>Press return, and <span class=mono>plutil</span> will give you an <span class=mono>OK</span>, or guidance if it finds an error.</p>
+<li><p>As you grow your module, it’s likely that you’ll run into errors that lead BBEdit to reject the file. If you have a file in your language open, the code won’t be colored, and its language will be set to “(none).”</p>
+<p>If you repair the plist, and relaunch BBEdit, your test file will still be un-colored, because it lost its language setting. Before you start looking for another error, check the language pop-up. If the CLM is still wrong, your language won’t appear; if it does, you can set it.<p>
+ </p></li>
+<li> The CLM loader itself can help you. BBEdit validates codeless language modules before loading them. If your module doesn’t take effect, open the Console application (in <span class=mono>/Applications/Utilities</span>) and look for BBEdit’s diagnostic messages.</li>
+<li> Regular-expression patterns can be picky. There are ways to make them easier to write:</li>
+ <ul>
+ <li> Open a new document in BBEdit, set its language to “Grep Search Pattern,” and build your patterns there. Having a full text editor, especially with syntax coloring, will make the job easier.</li>
+ 
+ <li> As you build your pattern, paste the whole pattern into the Find window, and use it to search a sample file in your language. Debug it by trying subpatterns. Remember that positional backreferences will not work in CLM regular-expression patterns; use named subexpressions.</li>
+ 
+ <li> Patterns are easier to understand if you can put each subpattern on its own line. You can do this by enclosing the pattern in <span class=mono>(?x:</span> … <span class=mono>)</span>. When you paste an extended pattern into the Find dialog, remember not to have an empty line after the closing parenthesis: It’s outside the extended pattern, and BBEdit must try to match it literally.</li>
+ 
+ <li> If complex patterns are not carefully crafted, the number of potential matches can be practically infinite, and the matching process will “run away.” BBEdit will cut matching off if any match takes more than 1.5 seconds, and the rest of the file will not be colored. The console log will contain a message if this occurs.</li>
+ </ul>
+ <li>
+ <p>Property list files are XML, which reserves the <span class=mono>&lt;</span>, <span class=mono>&gt;</span>, and <span class=mono>&amp;</span> characters exclusively for controlling the structure of the file. If you want to use those characters in-line, you must escape them as XML entities: <span class=mono>&amp;lt;</span>, <span class=mono>&amp;gt;</span>, and <span class=mono>&amp;amp;</span>.</p> 
+ <p>This reference shows an alternative: Wrap the pattern in a <span class=mono>&lt;![CDATA[</span> … <span class=mono>]]&gt;</span> block, and you don't have to escape the special characters.
+ </p>
+ <p>For readability, the <span class=mono>CDATA</span> blocks in this appendix put newlines and spaces before and after patterns. Ordinarily, this would mean that those patterns wouldn't match unless exactly that whitespace surrounded the target text. However, in order to make regular expressions easier to write, BBEdit strips leading and trailing whitespace from regular expressions wrapped as <span class=mono>CDATA</span>.
+ </p>
+ </li>
+</ul>
+<hr>
+<div id=AlphaIndex class=section>Index of CLM Tags</div>
+<ul class=toc>
+<li><a href=#BBEditDocumentType>BBEditDocumentType</a></li>
+<li><a href=#BBLMCanSpellCheckCodeRuns>BBLMCanSpellCheckCodeRuns</a></li>
+<li><a href=#BBLMColorsSyntax>BBLMColorsSyntax</a></li>
+<li><a href=#BBLMCommentLineDefault>BBLMCommentLineDefault</a></li>
+<li><a href=#BBLMCommentPrefixDefault>BBLMCommentPrefixDefault</a></li>
+<li><a href=#BBLMCommentSuffixDefault>BBLMCommentSuffixDefault</a></li>
+<li><a href=#BBLMFileNamesToMatch>BBLMFileNamesToMatch</a></li>
+<li><a href=#BBLMIsCaseSensitive>BBLMIsCaseSensitive</a></li>
+<li><a href=#BBLMKeywordList>BBLMKeywordList</a></li>
+<li><a href=#BBLMLanguageCode>BBLMLanguageCode</a></li>
+<li><a href=#BBLMLanguageDisplayName>BBLMLanguageDisplayName</a></li>
+<li><a href=#BBLMLanguageSuffix>BBLMLanguageSuffix</a></li>
+<li><a href=#BBLMPredefinedNameList>BBLMPredefinedNameList</a></li>
+<li><a href=#BBLMPreferredFilenameExtension>BBLMPreferredFilenameExtension</a></li>
+<li><a href=#BBLMReferenceSearchURLTemplate>BBLMReferenceSearchURLTemplate</a></li>
+<li><a href=#BBLMScansFunctions>BBLMScansFunctions</a></li>
+<li><a href=#BBLMSuffixMap>BBLMSuffixMap</a></li>
+<li><a href=#BBLMSupportsTextCompletion>BBLMSupportsTextCompletion</a></li>
+<li><a href=#Close%20Block%20Comments>Close Block Comments</a></li>
+<li><a href=#Close%20Parameter%20Lists>Close Parameter Lists</a></li>
+<li><a href=#Close%20Statement%20Blocks>Close Statement Blocks</a></li>
+<li><a href=#CloseStrings1>Close Strings&nbsp;1</a></li>
+<li><a href=#CloseStrings2>Close Strings&nbsp;2</a></li>
+<li><a href=#Comment%20Pattern>Comment Pattern</a></li>
+<li><a href=#End-of-line%20Ends%20Strings%C2%A01>End-of-line Ends Strings&nbsp;1</a></li>
+<li><a href=#End-of-line%20Ends%20Strings%C2%A02>End-of-line Ends Strings&nbsp;2</a></li>
+<li><a href=#Escape%20Char%20in%20Strings%C2%A01>Escape Char in Strings&nbsp;1</a></li>
+<li><a href=#Escape%20Char%20in%20Strings%C2%A02>Escape Char in Strings&nbsp;2</a></li>
+<li><a href=#Function%20Pattern>Function Pattern</a></li>
+<li><a href=#Identifier%20and%20Keyword%20Character%20Class>Identifier and Keyword Character Class</a></li>
+<li><a href=#Identifier%20and%20Keyword%20Characters>Identifier and Keyword Characters</a></li>
+<li><a href=#Language%20Features>Language Features</a></li>
+<li><a href=#Open%20Block%20Comments>Open Block Comments</a></li>
+<li><a href=#Open%20Line%20Comments>Open Line Comments</a></li>
+<li><a href=#Open%20Parameter%20Lists>Open Parameter Lists</a></li>
+<li><a href=#Open%20Statement%20Blocks>Open Statement Blocks</a></li>
+<li><a href=#Open%20Strings%C2%A01>Open Strings&nbsp;1</a></li>
+<li><a href=#Open%20Strings%C2%A02>Open Strings&nbsp;2</a></li>
+<li><a href=#Prefix%20for%20Functions>Prefix for Functions</a></li>
+<li><a href=#Prefix%20for%20Procedures>Prefix for Procedures</a></li>
+<li><a href=#Skip%20Pattern>Skip Pattern</a></li>
+<li><a href=#String%20Pattern>String Pattern</a></li>
+<li><a href=#Terminator%20for%20Prototypes%C2%A01>Terminator for Prototypes&nbsp;1</a></li>
+<li><a href=#Terminator%20for%20Prototypes%C2%A02>Terminator for Prototypes&nbsp;2</a></li>
+</ul>
+<hr>
+<div id=Credits class=subsubsection>Credits</div>
+<p>
+The revised, corrected, and expanded Codeless Language Module reference was written by <a href=http://manoverboard.org/>Fritz Anderson</a>, with technical review by <a href=http://www.wilcoxd.com/>Ryan Wilcox</a> and Rich Siegel.
+</p>
+ </div>
+ <div id=sidebar class="column span-5 append-2 last">
+ 
+ <div id=sidebar_content>
+ <div class=small>
+<h3>Newsflash(es)</h3>
+<ul>
+ <li><span class=newfeature><a href=https://www.barebones.com/support/bbedit/notes-14.1.html>BBEdit 14.1 Feature Update Released!</a></span></li>
+</ul>
+<ul>
+ <li><a href=https://www.barebones.com/support/new-os.html>macOS Compatibility Guide</a> <span class=newfeature>Updated!</span></li>
+</ul>
+<ul>
+ <li><a href=https://www.barebones.com/support/updates.html>Product Downloads</a></li>
+</ul>
+<ul>
+ <li><a href=https://www.barebones.com/store/macappstore.html>Mac App Store FAQ</a></li>
+</ul>
+<ul>
+ <li><a href=https://www.barebones.com/discuss/index.html>Visit our product discussion groups</a></li>
+</ul>
+<h3>Download:</h3>
+<ul>
+ <li><a href=https://s3.amazonaws.com/BBSW-download/BBEdit_14.1.2.dmg>BBEdit 14</a> <span class=newfeature>Updated!</span></li>
+ <li><a href=https://www.barebones.com/support/bbedit/updates.html#up11>Older BBEdit versions</a></li>
+ <li><a href=https://s3.amazonaws.com/BBSW-download/Yojimbo_4.6.2.dmg>Yojimbo</a> <span class=newfeature>Updated!</span></li>
+</ul>
+<h3>Looking for TextWrangler?</h3>
+<ul>
+ <li>We’ve <a href=https://www.barebones.com/products/textwrangler/>sunsetted</a> it, and <a href=https://www.barebones.com/products/bbedit/>BBEdit</a> is its successor.</li>
+ <li>Please see <a href=https://www.barebones.com/products/bbedit/faqs.html>our Q&amp;A</a> for important information.</li>
+</ul>
+<h3>User manuals:</h3>
+<ul>
+ <li><a href=https://s3.amazonaws.com/BBSW-download/BBEdit_14.1.2_User_Manual.pdf>BBEdit</a></li>
+ <li><a href=https://www.barebones.com/products/textwrangler/download.html>TextWrangler</a></li>
+</ul>
+<h3>Lost your serial number?</h3>
+<ul>
+ <li><a href=https://www.barebones.com/contact/lostserial.html>We’ll look it up for you!</a></li>
+</ul>
+</div>
+ </div>
+ </div>
+ <div class="column span-15 prepend-2 append-1 first last" id=footer style=margin-top:40px>
+ <p style=color:#999;font-size:7pt>Copyright ©1992-2022 Bare Bones Software, Inc. All rights reserved. <a href=https://www.barebones.com/company/privacy.html>Privacy policy.</a></p>
+ <a href=https://www.twitter.com/bbedit/><img src="data:image/gif;base64,R0lGODlhGAAYAOYAAACo7ACq7QCq7ACp7ACn7P7//wCm7AGq7AGr7bbn+tfy/FLG823P9F3K9EHB8SW47yK376/l+VfI87Hm+fL7/iO473/U9orZ9+T2/TC88EvE8gCk647a93PQ9S278Mft+8Lr+/L6/tPw/OD1/d/0/fb8/rvp+pfc94DV9je98TK78AOs7VHG8xOy7mzO9LLm+lvK8xKv7kXC8Se47xGx7qLh+EzF8gmt7QKq7a7k+drz/d30/fn9/hKy7hy17zS98A2w7gSt7QGp7EjC8j6+8ROw7h217w6w7mbN9Kzj+Rmy7vn9/xu173DR9TG78ACr7f///wCs7QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAYABgAAAfCgFGCg4SFhoeIiYqLjI2OhE8AAAGCT4kAhgMtLBJGBgJAh080SACWggMpGFBQFBY1GQKGAh5QFziYTzc6rL07MAeGARWsH0MIGxC9vQkxp4UHEb0iJxwFy1AaBIcCMxMl2OEOA6JHIeHYS0yUhwAyI9foUCaYiE8rOTzyUDb1iEIo9r3wJ+qJASIJwikowg5RDx9OOpDABkIJuUQBVCRR6AJBw0QCAjxYwKBJgx9BCDxjFAAAAQIABqx8RLOmzZs2AwEAOw==" alt=Twitter class=icon></a>
+ 
+ <a href=https://www.youtube.com/barebonessoftware/><img src="data:image/gif;base64,R0lGODlhGAAYAPcAAL0WFsI7O9kvL81NTbMMDM0jI7UpKcsfH783N+lCQrInJ8UdHeM5OcUZGcEZGdMoKMcfH8UUFPVOTvZPT7cPD+5ISLsTE/ZQUOhBQbgQEMEaGsUeHvFKSuxGRu9JSf39/fdPT+Q9PfJLS903N+tFRcghIf3z88IbG+Q+PtApKbILC/JMTLwUFLMLC7YODrkREf7//+A2NtMsLNwyMskiIrQNDeE6Ovb29vFLS9YvL+I7O+dAQOY9PbUODtkyMr0TE/xWVs0lJbsSEudBQflRUb4QELQMDL4REeM9PboLC+1HR8ATE/zy8roMDLwbG84mJtUuLrYICLYPD/xXV/VNTdInJ8EUFOxFReA5Ob8XF8I+Pt43N9ozM70NDfZOTswkJLgREcZCQrgPD84jI8pISOM6Or4XF6YQENmBgd42NsMcHKoUE+319ej19bszM70VFc0mJtxycs9QUN3R0dgmJuAvL8geHu9DQ6wdHb8QENUoKNksLOOqqstKSupBQbkwMMwlJelNTe3x8cwoKNAyMqUSEsElJcIYGNQrK8U/P+tDQ+ZJSc0fH6sbG9JHR95CQvL19fLe3rwLC9lTU/3//+3Nze9ISK8hIO7k5NkpKcdFRenf38QmJtFSUtJRUdJTU981NcsuLuTc3Ls0NOOjo8hFRc5DQ81HR+M0NNIrK+Gnp+xSUs5ISM8lJdgxMd+WltowMOHR0eM3N89WVrgvL8ojI9QtLeg/P9ctLdJcXOzKys9ra8scHPHy8sgcHPP7+9KPj7csLPBKSs49Pe1GRrAjI8cpKdg7O/bt7dI1Nds/P7w1NehBQutGRs4hIcQaGscbG+WOjqYUFLEkJLYrK9h9fcQXF/Tp6frw8PXo6M9MTPf6+ssxMff7+9w2NvHw8PHx8e3w8OxDQ+tERPn///RMTNBQUNFQUNFRUexERe1FRdMyMu5GRqgSEulBQc8oKPHExL4WFuK5ue5ERMEbG8EnJ8ggIOJFRdQqKtUrK60fH7cQEPVPT7oSEvNMTP///yH5BAAAAAAALAAAAAAYABgAAAj/AD0BAcHvgoQJ/PhJ4DcB4YSFEi4Y9DLlHCsiIkT420jF3woOGz2G9IcDJIhTnwYWPJhwYUOGECVKoNgJHUaNHD2C3LhiZEl/IMzJkWCpggcczUDdEebBgxIlRitElVpuwAAO6a6QELeKlKM684hpJdGh7LiyJDj0IcMOwxAMtwL9Q4ZmHSpFCTAwy4vB7Q51ZDT5CRECRZlFJv79q5RLj6wdhVGEQIICibtSYXjY0IElxr3EiinxGUaHgY7NWGzY4BEmEQNvI0bMeARa8b9s1QZlSrMl9pYyiQLE4OLDhwBltW3/0zWL0R4urnzECIBgBpQcORAdY6JcOQxVpvBd/5+BAAEsGbZSPdjevXu0KjJkCFg2CleKdylaJcMG44N//zDAAM8kzjyRQgr5uEHLA4A88UUBhFzTzQ0UbkNOJHEUwEsQcATxRRV/BDNGCTSUYEcomEACTi+/fPMKNxHYQ0MtJJYwBjUGHLDBBgs8Y8wm4QjChjzaRNDAAhBAsOMCGxxggAK+aHDCCYdwIkobsexySB4OnKDBlyeooQE90CgwTQMAAGDGD4bMAUw9kvyQphlpxpNFFm8AYE0xl1jRTz8sCOGEFkk08Wc/L7zAwqEWNLqEPngcsc8+LmQgRhQUTLqPFD24QAEYGWRKQQZFNLKGn4AKSqihfya66J+NWiuwRDvtSEqppZhqyqmnoIpK6hnSdKFCCwQYoYIKNSTbwrBGEOCss8R2UUhAADs=" alt=YouTube class=icon></a>
+ <a href=https://www.barebones.com/company/builtwithbbedit.html><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAAPAAA/+4ADkFkb2JlAGTAAAAAAf/bAIQABgQEBAUEBgUFBgkGBQYJCwgGBggLDAoKCwoKDBAMDAwMDAwQDA4PEA8ODBMTFBQTExwbGxscHx8fHx8fHx8fHwEHBwcNDA0YEBAYGhURFRofHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8f/8AAEQgADwBQAwERAAIRAQMRAf/EAHoAAQEBAQEAAAAAAAAAAAAAAAYFBAMHAQEAAwEBAAAAAAAAAAAAAAAAAQIFAwQQAAIDAAEDAwQCAgMAAAAAAAIDAQQFBhESBwAhEzEiFBVRI3EzMkIkEQACAgEDAwQDAAAAAAAAAAAAAQIDESExEkEEBVFxkRMiMiP/2gAMAwEAAhEDEQA/APVeL+OuC3PGuJdfg57tW9kVWTZZWQTWWW1ROWEZj7lJTJERT/Mz6mO4B4O4vkcEx9JlSpVd+1XU3hmjXGxNWzalA2JUxfcsYHt7J7PeJ9a3lu3+u58V/PTHVe2TnW8ozaFOrT27F7Nwq97j+JorsX3FUrquRkDVIrhnXlaCJYt/0kI9x9C+sdPU+Nrrt5wsa5SjiG/7502E21sJ/FuHwrlOcLr/AArLSpwHYzbwV6pxYp/LK1McuIIktLp7iX1mC6fTp64eR7ONE+MZZ9Vro/jX3JhLKFfIeBeK8HA09y5xbPZUyqj7tgE0q0sJddZNOAghEZKRH26zH+fWcXB93S8HVOK0OSM4hTmnoXizUj8eMAQ4Utf3fmssBnmvsQUd67JR3/1/7IIRAqxneGi5lncTHiVMb+lRXpIY+pQq9Eth8iM1rRoukyPxT7wCuUr9u/t9+gGTGjw1p5CdIuEqo/kfqWIqWaNCXHW3rI1aFr+g3KhZtku4ZOGDAT1D/j3AW6nD/Gdjl2hxqOD1ltz6le6zROpn/isXaIwVC+0yf3SaGx9yo6dk+/SQ7gMvkfx3wXL4FyPQzsDPq3qmVesVbSayVtU1VczWxZiMEJCURMTH0n0AP3NPgmt4j49icmbpZc1c2outpKo6EKhy66xkgcCvheuZj/qUiUe8T9J9aPjL76reVKcpeiWdCk0mtSD5LHj+jyPVtjpnn7d3NyFGqxUuQaWJuJcLWLhPyxJGpS1iXb3Sf169In2W9xOXYqvg1H7G+T264SfyVS/LI+va2Q7ds8h5A21+0LBfRr4Ss+6oQqsOCsWHQwJaY98QPdIwID/Mz19ZVGVZHG6aOj2OfiLlnF8XiYZ+ai7eWthT+VRzNGyBCXuHVi0EPsPtEevX5iyU+5lKSab6PRla1hCfkPPeK2sDTq7mfrDivqPVqE7I1kriqayF8m2EB2D8cz1Lujp9evrMLh92x4vdXRjnV3YfW0patoI5CGjOlNIp6MuB23GO/AZP2myZ+Hp7dgj0A1ZfKvG7tmnsY1LWi3Wzaiqys+htBVnNmHxSkqddY1mJ/sd8BEuY+vZP2+wE/G5D4ez8hNHPp6R0J/U2axtqbVoviXZEsaFvcLWfj/kq/wDMsS+Mi7oEZ7i6gJkc94qO/dtJz9b902pVVdGMjWlkVVssFVklfB9oyxj+0u2O73jrPb7ATPIvNqGjwPkdFdHUU6zlXkqOxl6FZIkyuYwTHPStSwjr9xmUDEe8z6A//9k=" alt="Built with BBEdit"></a>
+ </div>
+</div>
+<div id=_2svbb98><div></div></div><span style="margin:0px auto;border:2px dotted rgb(0,0,0);position:absolute;z-index:2147483647;visibility:hidden;left:950px;width:0px;top:885px;height:0px"></span><span style=z-index:2147483647;position:absolute;visibility:hidden;left:935px;width:50px;top:870px;height:20px;font-size:10px;color:black></span><div>
+ <div class="cubox-extension-helper-button sf-hidden">
+ <svg width=18 height=18 viewBox="0 0 18 18" fill=none xmlns=http://www.w3.org/2000/svg>
+ <path d="M6.73323 2.49788C7.84009 1.86706 8.39352 1.55165 9 1.55165C9.60648 1.55165 10.1599 1.86706 11.2668 2.49789L13.617 3.83732C14.7446 4.47998 15.3085 4.80131 15.6183 5.33457C15.9282 5.86784 15.9282 6.5168 15.9282 7.8147V10.3913C15.9282 11.6892 15.9282 12.3382 15.6183 12.8714C15.3085 13.4047 14.7446 13.726 13.617 14.3687L11.2668 15.7081C10.1599 16.339 9.60648 16.6544 9 16.6544C8.39352 16.6544 7.84009 16.339 6.73323 15.7081L4.38299 14.3687C3.25536 13.726 2.69155 13.4047 2.38167 12.8714C2.0718 12.3382 2.0718 11.6892 2.0718 10.3913V7.8147C2.0718 6.51679 2.0718 5.86784 2.38167 5.33457C2.69155 4.80131 3.25536 4.47998 4.38299 3.83732L6.73323 2.49788Z" stroke=black stroke-width=1.18519></path>
+ <path opacity=0.6 fill-rule=evenodd clip-rule=evenodd d="M10.291 11.7061C10.2232 11.7032 10.1752 11.6462 10.1836 11.5788C10.1887 11.5381 10.2137 11.501 10.2501 11.4798L11.5298 10.7152L11.8154 9.20506C11.8273 9.1385 11.8863 9.09356 11.9473 9.10469C11.9793 9.11053 12.0071 9.13122 12.0236 9.1614L12.542 10.0752L13.6676 9.33771C13.7197 9.30261 13.7906 9.32089 13.8263 9.37853C13.8508 9.41792 13.8532 9.46746 13.8323 9.50662L13.1288 10.7636L13.7725 11.685C13.813 11.7412 13.801 11.817 13.7452 11.8544C13.7237 11.8689 13.6977 11.876 13.671 11.8747L12.4043 11.8163L11.3304 13.1736C11.2854 13.2279 11.2034 13.2393 11.1474 13.1992C11.1084 13.1712 11.0911 13.1238 11.1028 13.0776L11.4271 11.7547L10.291 11.7061Z" fill=black></path>
+ <path opacity=0.1 d="M8.84354 1.09613C8.93945 1.0372 9.06039 1.03743 9.15607 1.09672L15.4235 4.98043C15.6161 5.09977 15.61 5.38199 15.4124 5.49287L9.55776 8.77853C9.21114 8.97306 8.78841 8.97382 8.4411 8.78054L2.53423 5.49336C2.33541 5.38272 2.32928 5.09894 2.52314 4.97982L8.84354 1.09613Z" fill=black></path>
+ </svg>
+ </div>
+ </div>
